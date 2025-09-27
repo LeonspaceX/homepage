@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晓夜の主页喵～</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/lxgwwenkaiscreen.css" rel="stylesheet">
+    <style>
+        :root {
+            --rosewater: #f2d5cf;
+            --flamingo: #eebebe;
+            --pink: #f4b8e4;
+            --mauve: #ca9ee6;
+            --red: #e78284;
+            --maroon: #ea999c;
+            --peach: #ef9f76;
+            --yellow: #e5c890;
+            --green: #a6d189;
+            --teal: #81c8be;
+            --sky: #99d1db;
+            --sapphire: #85c1dc;
+            --blue: #8caaee;
+            --lavender: #babbf1;
+
+            --text: #c6d0f5;
+            --subtext1: #b5bfe2;
+            --subtext0: #a5adce;
+            --overlay2: #949cbb;
+            --overlay1: #838ba7;
+            --overlay0: #737994;
+            --surface2: #626880;
+            --surface1: #51576d;
+            --surface0: #414559;
+            --base: #303446;
+            --mantle: #292c3c;
+            --crust: #232634;
+        }
+
+         body {
+             font-family: 'LXGW Wenkai Screen', sans-serif;
+             max-width: 800px;
+             margin: 0 auto;
+             padding: 20px;
+             background: var(--base);
+             color: var(--text);
+             line-height: 1.6;
+         }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+        }
+
+        .big-card {
+            background: var(--surface0);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 
+                0 4px 12px var(--surface1),
+                0 1px 2px var(--surface2);
+            margin: 20px 0;
+            border-left: 4px solid var(--mauve);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        @media (max-width: 768px) {
+           .big-card {
+               padding: 15px;
+           }
+        }
+
+        .big-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 2px 5px var(--blue),
+                0 1px 2px var(--lavender);
+        }
+
+        .social-div {
+            background: var(--surface0);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 
+                0 4px 12px var(--surface1),
+                0 1px 2px var(--surface2);
+            margin: 20px 0;
+            border-left: 4px solid var(--red);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .social-div:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 2px 5px var(--peach),
+                0 1px 2px var(--maroon);
+        }
+
+        .avatar-div {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: url('avatar.jpg') no-repeat center center;
+            background-size: cover;
+            margin-bottom: 15px;
+            border: 3px solid var(--mauve);
+        }
+
+        @media (max-width: 768px) {
+           .avatar-div {
+               width: 60px;
+               height: 60px;
+           }
+        }
+
+        h1 {
+            color: var(--mauve);
+            margin-bottom: 15px;
+            font-size: 2.2rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+           h1 {
+               font-size: 1.8rem;
+           }
+        }
+
+        p {
+            color: var(--subtext1);
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+           p {
+               font-size: 0.9rem;
+           }
+        }
+
+        #motto {
+            display: block;
+            width: 600px;
+            min-height: 1.2em;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+           #motto {
+               width: auto;
+           }
+        }
+
+        #motto-text {
+            white-space: nowrap;
+        }
+
+        #motto-cursor {
+            display: inline-block;
+            width: 10px;
+            text-align: center;
+            animation: blink 1s step-end infinite;
+        }
+        /* Tip: 参数含义 */
+        .top-buttons {
+            position: fixed;
+            top: 20px;         /* 距离顶部 */
+            right: 20px;       /* 距离右边 */
+            display: flex;     /* 横向排列 */
+            gap: 10px;         /* 按钮间距 */
+        }
+
+        @media (max-width: 768px) {
+            .top-buttons {
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        /* Tip: 参数含义 */
+        .top-time {
+            color: var(--subtext1);
+            position: fixed;
+            top: 20px;         /* 距离顶部 */
+            left: 20px;       /* 距离左边 */
+        }
+
+        @media (max-width: 768px) {
+            .top-time {
+                top: 10px;
+                left: 10px;
+            }
+        }
+        .btn {
+            background: var(--surface0);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            background: var(--mauve);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(136, 57, 239, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+        .small-card {
+            display: flex;
+            align-items: center;
+            background: var(--surface0);
+            padding: 12px 16px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--blue);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        @media (max-width: 768px) {
+           .small-card {
+               padding: 10px 12px;
+           }
+        }
+
+        .small-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 2px 5px var(--sky),
+                0 1px 2px var(--lavender);
+        }
+
+        .small-card .icon {
+            font-size: 1.4rem;
+            margin-right: 12px;
+        }
+
+        .small-card .label a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+           .small-card .label a {
+               font-size: 1rem;
+           }
+        }
+
+        .social-title {
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--maroon);
+        }
+
+
+        .card-row {
+            display: flex;
+            justify-content: space-between; /* 平均分布 */
+            gap: 15px;                      /* 卡片间距 */
+        }
+
+        @media (max-width: 768px) {
+            .card-row {
+                flex-direction: column;
+            }
+        }
+
+        .card-row .small-card {
+            flex: 1;
+            margin: 0;
+            display: flex;
+            align-items: center;    /* 垂直居中 */
+            justify-content: center;/* 水平居中 */
+            text-align: left;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .socials {
+                gap: 10px;
+            }
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--surface0);
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-link:hover {
+            background: var(--mauve);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(202, 158, 230, 0.3);
+        }
+
+        .social-link svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        @media (max-width: 768px) {
+           .social-link svg {
+               width: 20px;
+               height: 20px;
+           }
+        }
+
+         /* 毛玻璃背景层，默认隐藏 */
+        #blur-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: url('background.jpg') center/cover no-repeat;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px); /* Safari 支持 */
+            opacity: 0.5; /* 半透明效果，可调整 */
+            pointer-events: none; /* 不阻止鼠标操作 */
+            z-index: -1; /* 放在内容后面 */
+            display: none; /* 默认不显示 */
+        }
+
+         @media (max-width: 768px) {
+             #blur-bg {
+                 background: url('background-mobile.jpg') center/cover no-repeat;
+             }
+         }
+
+         @media (max-width: 768px) and (orientation: portrait) {
+             #blur-bg {
+                 background: url('background-mobile.jpg') center/cover no-repeat;
+             }
+         }
+
+      </style>
+   </head>
+  <body>
+    <div id="blur-bg"></div>
+    <div class="top-buttons">
+        <div class="btn icon-btn" id="theme-change">☀️</div>
+        <div class="btn icon-btn" id="music-btn">🎶</div>
+    </div>
+    <!-- 右上角 -->
+    <div class="top-time" id="top-time"></div>
+    <div class="big-card">
+        <div class="avatar-div"></div>
+        <h1>👋 Hi, This is <span style="color: var(--green)">Leonxie/晓夜</span>~</h1>
+        <p id="motto">
+            <span id="motto-text"></span>
+            <span id="motto-cursor">_</span>
+        </p>
+        <!-- 头像&座右铭 -->
+        <script>
+            const texts = [
+            "『保持热爱，奔赴山海。』",
+            "『在这个世界难免会迷茫，但别再把小刀带在身上』",
+            "『生命是一万次的谎话，吊唁着梦和童话』"
+            ];
+
+            const textElement = document.getElementById('motto-text');
+            const speed = 100; // 打字速度
+            const pauseTime = 500; // 停顿时间
+
+            let currentIndex = 0;
+
+            function typeWriter(text, element, speed, callback) {
+            let i = 0;
+            element.textContent = '';
+            const typing = setInterval(() => {
+                if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+                } else {
+                clearInterval(typing);
+                setTimeout(callback, pauseTime);
+                }
+            }, speed);
+            }
+
+            function deleteWriter(element, speed, callback) {
+            let text = element.textContent;
+            let i = text.length;
+            const deleting = setInterval(() => {
+                if (i > 0) {
+                i--;
+                element.textContent = text.substring(0, i);
+                } else {
+                clearInterval(deleting);
+                setTimeout(callback, pauseTime);
+                }
+            }, speed);
+            }
+
+            function nextText() {
+            const text = texts[currentIndex];
+            typeWriter(text, textElement, speed, () => {
+                deleteWriter(textElement, speed, () => {
+                currentIndex = (currentIndex + 1) % texts.length;
+                nextText();
+                });
+            });
+            }
+
+            nextText();
+            
+            const blurBg = document.getElementById('blur-bg');
+            const themeBtn = document.getElementById("theme-change");
+            let isDark = true;
+            themeBtn.addEventListener("click", () => {
+                if (isDark) {
+                    document.documentElement.style.setProperty("--rosewater", "#dc8a78");
+                    document.documentElement.style.setProperty("--flamingo", "#dd7878");
+                    document.documentElement.style.setProperty("--pink", "#ea76cb");
+                    document.documentElement.style.setProperty("--mauve", "#8839ef");
+                    document.documentElement.style.setProperty("--red", "#d20f39");
+                    document.documentElement.style.setProperty("--maroon", "#e64553");
+                    document.documentElement.style.setProperty("--peach", "#fe640b");
+                    document.documentElement.style.setProperty("--yellow", "#df8e1d");
+                    document.documentElement.style.setProperty("--green", "#40a02b");
+                    document.documentElement.style.setProperty("--teal", "#179299");
+                    document.documentElement.style.setProperty("--sky", "#04a5e5");
+                    document.documentElement.style.setProperty("--sapphire", "#209fb5");
+                    document.documentElement.style.setProperty("--blue", "#1e66f5");
+                    document.documentElement.style.setProperty("--lavender", "#7287fd");
+                    document.documentElement.style.setProperty("--text", "#4c4f69");
+                    document.documentElement.style.setProperty("--subtext1", "#5c5f77");
+                    document.documentElement.style.setProperty("--subtext0", "#6c6f85");
+                    document.documentElement.style.setProperty("--overlay2", "#7c7f93");
+                    document.documentElement.style.setProperty("--overlay1", "#8c8fa1");
+                    document.documentElement.style.setProperty("--overlay0", "#9ca0b0");
+                    document.documentElement.style.setProperty("--surface2", "#acb0be");
+                    document.documentElement.style.setProperty("--surface1", "#bcc0cc");
+                    document.documentElement.style.setProperty("--surface0", "#ccd0da");
+                    document.documentElement.style.setProperty("--base", "#eff1f5");
+                    document.documentElement.style.setProperty("--mantle", "#e6e9ef");
+                    document.documentElement.style.setProperty("--crust", "#dce0e8");
+                    themeBtn.textContent = "🌙";
+                    blurBg.style.display = 'block';
+                    isDark = false;
+                } 
+                else {
+                    document.documentElement.removeAttribute("style");
+                    themeBtn.textContent = "☀️";
+                    blurBg.style.display = 'none';
+                    isDark = true;
+                }
+            });
+        </script>
+        <script>
+            function updateTime() {
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = (now.getMonth() + 1).toString().padStart(2, '0');
+                const day = now.getDate().toString().padStart(2, '0');
+                const hours = now.getHours().toString().padStart(2, '0');
+                const minutes = now.getMinutes().toString().padStart(2, '0');
+                document.getElementById('top-time').textContent = `${year}年${month}月${day}日 ${hours}:${minutes}`;
+            }
+
+            updateTime();
+            setInterval(updateTime, 1000);
+        </script>
+    </div>
+    <div class="card-row">
+        <div class="small-card" onclick="window.open('https://leonxie.cn', '_blank')">
+            <span class="icon">📖</span>
+            <span class="label">Blog</span>
+        </div>
+        <div class="small-card" onclick="window.open('https://music.leonxie.cn', '_blank')">
+            <span class="icon">🎵</span>
+            <span class="label">Music</span>
+        </div>
+        <div class="small-card" onclick="window.open('https://miku39.sbs', '_blank')">
+            <span class="icon">💫</span>
+            <span class="label">MIKU39</span>
+        </div>
+        <div class="small-card" onclick="window.open('https://catpost.link', '_blank')">
+            <span class="icon">🐱</span>
+            <span class="label">Catpost</span>
+        </div>
+    </div>
+    <div class="social-div">
+            <p class="social-title">要来找咱嘛~</p>
+            <div class="socials">
+            <a class="social-link" href="https://github.com/LeonSpaceX" title="GitHub" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 .5C5.648.5.5 5.648.5 12c0 5.092 3.292 9.398 7.865 10.918.575.105.785-.25.785-.555v-2.055c-3.2.695-3.875-1.54-3.875-1.54-.523-1.332-1.277-1.687-1.277-1.687-1.043-.715.078-.7.078-.7 1.152.082 1.757 1.187 1.757 1.187 1.027 1.762 2.695 1.25 3.352.957.105-.75.402-1.25.73-1.54-2.553-.29-5.235-1.277-5.235-5.687 0-1.258.45-2.285 1.188-3.09-.12-.29-.516-1.457.112-3.035 0 0 .968-.31 3.172 1.176A11.07 11.07 0 0 1 12 6.445c.977.004 1.957.132 2.875.387 2.203-1.484 3.168-1.176 3.168-1.176.63 1.578.234 2.745.117 3.035.74.805 1.188 1.832 1.188 3.09 0 4.422-2.688 5.394-5.25 5.68.414.355.797 1.05.797 2.117v3.14c0 .305.207.664.793.551C20.215 21.395 23.5 17.09 23.5 12c0-6.352-5.148-11.5-11.5-11.5z"/>
+            </svg>
+            </a>
+
+            
+            <a class="social-link" href="https://t.me/@NekoLeonXie" title="Telegram" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9.993 15.67 9.77 19.46c.348 0 .498-.147.679-.324l1.63-1.555 3.385 2.477c.62.34 1.063.161 1.224-.573l2.215-10.4c.226-1.053-.379-1.466-1.043-1.207L4.41 11.04c-1.016.407-.999.993-.173 1.26l3.26 1.017 7.572-4.773c.356-.216.68-.097.414.139"/>
+            </svg>
+            </a>
+
+            
+            <!-- Misskey -->
+            <a class="social-link" href="https://catpost.link/@leonxie" title="Misskey" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" class="iconify iconify--simple-icons icon-iconify"><path fill="currentColor" d="M8.91 16.892c-1.039.003-1.931-.63-2.352-1.366c-.225-.322-.67-.437-.676 0v2.014q0 1.215-.876 2.1q-.85.86-2.078.86q-1.2 0-2.077-.86A2.93 2.93 0 0 1 0 17.54V6.46q0-.936.526-1.695a2.86 2.86 0 0 1 1.402-1.088a2.9 2.9 0 0 1 1-.177q1.353 0 2.253 1.063l2.997 3.515c.067.05.263.437.732.437c.47 0 .692-.386.758-.437l2.972-3.515Q13.567 3.5 14.918 3.5q.501 0 1.001.177a2.73 2.73 0 0 1 1.377 1.088q.55.758.55 1.695v11.08q0 1.215-.875 2.1q-.852.86-2.078.86q-1.201 0-2.078-.86a2.93 2.93 0 0 1-.85-2.1v-2.014c-.05-.55-.531-.204-.702 0c-.45.843-1.313 1.361-2.352 1.366M21.448 8.61q-1.05 0-1.802-.733q-.726-.759-.726-1.822c0-1.063.242-1.307.726-1.796a2.44 2.44 0 0 1 1.802-.758q1.05 0 1.803.758q.75.735.75 1.796q0 1.063-.75 1.822q-.751.732-1.803.733m.025.507q1.05 0 1.777.758q.75.759.751 1.822v6.248q0 1.064-.75 1.821a2.4 2.4 0 0 1-1.778.734q-1.05 0-1.802-.733a2.5 2.5 0 0 1-.75-1.822v-6.248a2.5 2.5 0 0 1 .75-1.822a2.44 2.44 0 0 1 1.802-.758"></path></svg>
+            </a>
+
+            <!-- QQ -->
+            <a class="social-link" href="QQ.png" title="QQ" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024" fill="currentColor">
+                <path d="M824.8 613.2c-16-51.4-34.4-94.6-62.7-165.3C766.5 262.2 689.3 112 511.5 112 331.7 112 256.2 265.2 261 447.9c-28.4 70.8-46.7 113.7-62.7 165.3-34 109.5-23 154.8-14.6 155.8 18 2.2 70.1-82.4 70.1-82.4 0 49 25.2 112.9 79.8 159-26.4 8.1-85.7 29.9-71.6 53.8 11.4 19.3 196.2 12.3 249.5 6.3 53.3 6 238.1 13 249.5-6.3 14.1-23.8-45.3-45.7-71.6-53.8 54.6-46.2 79.8-110.1 79.8-159 0 0 52.1 84.6 70.1 82.4 8.5-1.1 19.5-46.4-14.5-155.8z">
+                </path>
+            </svg>
+            </a>
+
+        </div>
+    </div>
+ <!-- BGM 控制弹窗 -->
+    <div id="bgm-popup" style="
+        display:none; 
+        position:fixed; 
+        bottom:20px; 
+        right:20px; 
+        background:var(--surface0); 
+        color:var(--text); 
+        padding:15px; 
+        border-radius:12px; 
+        box-shadow:0 4px 12px var(--surface1); 
+        width:260px; 
+        z-index:999;
+        font-family: 'LXGW Wenkai Screen', sans-serif;
+    ">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <div style="font-weight:600;" id="bgm-title">深海少女 ゆうゆ/初音ミク</div>
+            <button id="bgm-replay" class="btn" style="background:none; border:none; padding:0; cursor:pointer;" title="重播">
+                🔄
+            </button>
+        </div>
+
+        <div style="display:flex; justify-content:center; gap:15px; margin-bottom:10px;">
+            <button id="bgm-toggle" style="background:none; border:none; cursor:pointer;">
+                <!-- 默认播放按钮 SVG -->
+                <svg id="bgm-toggle-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+            </button>
+        </div>
+
+        <div style="display:flex; flex-direction:column; align-items:center; gap:5px;">
+            <div id="bgm-time" style="font-size:0.85rem;">0:00 / 0:00</div>
+            <div style="position:relative; width:100%; height:6px; background:var(--surface1); border-radius:3px; cursor:pointer;" id="bgm-bar-container">
+                <div id="bgm-bar" style="position:absolute; height:6px; background:var(--mauve); border-radius:3px; width:0%;"></div>
+            </div>
+        </div>
+
+        <audio id="bgm-audio" src="https://m801.music.126.net/20250926233707/e599960a79e423e8744681cd31894175/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/35975638029/8e56/9947/8467/7409b7562a1c195a683eaaaad256f89c.mp3?vuutv=1BOW76hnasgHXzDx7ny19LpNDJRk6yOkMHUN5JdouwTiEcGQPJAo27hJw5DK4DUoZJoSH74/EH7ecHwWcCdyg/DVrP84gZJWtobgXVd5Tc6xW4WlG32C6kJ24JE6Y9as5oBJGtzwu4+xO6yOvqcMpQ==&cdntag=bWFyaz1vc193ZWIscXVhbGl0eV9zdGFuZGFyZA"></audio>
+    </div>
+
+
+    <script>
+    const musicBtn = document.getElementById('music-btn');
+    const bgmPopup = document.getElementById('bgm-popup');
+    const bgmAudio = document.getElementById('bgm-audio');
+    const bgmToggle = document.getElementById('bgm-toggle');
+    const bgmToggleIcon = document.getElementById('bgm-toggle-icon');
+    const bgmReplay = document.getElementById('bgm-replay');
+    const bgmBar = document.getElementById('bgm-bar');
+    const bgmBarContainer = document.getElementById('bgm-bar-container');
+    const bgmTime = document.getElementById('bgm-time');
+
+    // 显示/隐藏弹窗
+    musicBtn.addEventListener('click', () => {
+        bgmPopup.style.display = bgmPopup.style.display === 'none' ? 'block' : 'none';
+    });
+
+    // 播放/暂停切换
+    bgmToggle.addEventListener('click', () => {
+        if (bgmAudio.paused) {
+            bgmAudio.play();
+        } else {
+            bgmAudio.pause();
+        }
+    });
+
+    // 重播
+    bgmReplay.addEventListener('click', () => {
+        bgmAudio.currentTime = 0;
+        bgmAudio.play();
+    });
+
+    // 更新播放状态按钮
+    bgmAudio.addEventListener('play', () => {
+        bgmToggleIcon.innerHTML = '<path d="M6 19h4V5H6zm8-14v14h4V5z"/>'; // 暂停图标
+    });
+    bgmAudio.addEventListener('pause', () => {
+        bgmToggleIcon.innerHTML = '<path d="M8 5v14l11-7z"/>'; // 播放图标
+    });
+
+    // 更新进度条和时间
+    bgmAudio.addEventListener('timeupdate', () => {
+        if (bgmAudio.duration) {
+            const percent = (bgmAudio.currentTime / bgmAudio.duration) * 100;
+            bgmBar.style.width = percent + '%';
+            bgmTime.textContent = formatTime(bgmAudio.currentTime) + ' / ' + formatTime(bgmAudio.duration);
+        }
+    });
+
+    // 点击进度条跳转
+    bgmBarContainer.addEventListener('click', e => {
+        const rect = bgmBarContainer.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const percent = clickX / rect.width;
+        bgmAudio.currentTime = percent * bgmAudio.duration;
+    });
+
+    // 格式化时间 mm:ss
+    function formatTime(seconds) {
+        const m = Math.floor(seconds / 60);
+        const s = Math.floor(seconds % 60);
+        return `${m}:${s.toString().padStart(2,'0')}`;
+    }
+    </script>
+    <!-- BGM播放，小弹窗（歌曲信息、开始、停止、显示进度、重播）-->
+  </body>
+</html>
