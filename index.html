@@ -358,6 +358,31 @@
              }
          }
 
+        .light-mode .big-card,
+        .light-mode .small-card,
+        .light-mode .social-div,
+        .light-mode .BGM-div {
+            background: rgba(255, 255, 255, 0.3) !important; /* 半透明白色背景 */
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px); /* Safari支持 */
+        }
+
+        .BGM-div
+        {
+            display:none; 
+            position:fixed; 
+            bottom:20px; 
+            right:20px; 
+            background:var(--surface0); 
+            color:var(--text); 
+            padding:15px; 
+            border-radius:12px; 
+            box-shadow:0 4px 12px var(--surface1); 
+            width:260px; 
+            z-index:999;
+            font-family: 'LXGW Wenkai Screen', sans-serif;
+        }
+
       </style>
    </head>
   <body>
@@ -462,12 +487,14 @@
                     document.documentElement.style.setProperty("--crust", "#dce0e8");
                     themeBtn.textContent = "🌙";
                     blurBg.style.display = 'block';
+                    document.body.classList.add('light-mode');
                     isDark = false;
                 } 
                 else {
                     document.documentElement.removeAttribute("style");
                     themeBtn.textContent = "☀️";
                     blurBg.style.display = 'none';
+                    document.body.classList.remove('light-mode');
                     isDark = true;
                 }
             });
@@ -538,20 +565,7 @@
         </div>
     </div>
  <!-- BGM 控制弹窗 -->
-    <div id="bgm-popup" style="
-        display:none; 
-        position:fixed; 
-        bottom:20px; 
-        right:20px; 
-        background:var(--surface0); 
-        color:var(--text); 
-        padding:15px; 
-        border-radius:12px; 
-        box-shadow:0 4px 12px var(--surface1); 
-        width:260px; 
-        z-index:999;
-        font-family: 'LXGW Wenkai Screen', sans-serif;
-    ">
+    <div id="bgm-popup" class="BGM-div">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
             <div style="font-weight:600;" id="bgm-title">深海少女 ゆうゆ/初音ミク</div>
             <button id="bgm-replay" class="btn" style="background:none; border:none; padding:0; cursor:pointer;" title="重播">
