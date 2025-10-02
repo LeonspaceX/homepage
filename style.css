@@ -212,6 +212,7 @@
             border-radius: 8px;
             border-left: 4px solid var(--blue);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
         }
 
         @media (max-width: 768px) {
@@ -300,6 +301,7 @@
             text-decoration: none;
             transition: all 0.3s ease;
             border: 2px solid transparent;
+            cursor: pointer;
         }
 
         .social-link:hover {

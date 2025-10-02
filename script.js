@@ -121,6 +121,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const bgmBarContainer = document.getElementById('bgm-bar-container');
     const bgmTime = document.getElementById('bgm-time');
 
+    // 初始化弹窗状态
+    bgmPopup.style.display = 'none';
+    monitorPopup.style.display = 'none';
+    
     // 显示/隐藏弹窗(BGM)
     musicBtn.addEventListener('click', () => {
         bgmPopup.style.display = bgmPopup.style.display === 'none' ? 'block' : 'none';
