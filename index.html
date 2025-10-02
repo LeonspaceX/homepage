@@ -11,8 +11,9 @@
   <body>
     <div id="blur-bg"></div>
     <div class="top-buttons">
-        <div class="btn icon-btn" id="theme-change">☀️</div>
-        <div class="btn icon-btn" id="music-btn">🎶</div>
+        <div class="btn icon-btn" id="theme-change" title="切换主题">☀️</div>
+        <div class="btn icon-btn" id="music-btn" title="BGM面板">🎶</div>
+        <div class="btn icon-btn" id="monitor-btn" title="视奸面板">👁️</div>
     </div>
     <!-- 右上角 -->
     <div class="top-time" id="top-time"></div>
@@ -102,11 +103,14 @@
             </div>
         </div>
 
-        <audio id="bgm-audio" src="music.mp3"></audio>
+        <audio id="bgm-audio" src="music.mp3" lyricpath="lyrics.json"></audio>
     </div>
-
-
     <script src="script.js"></script>
     <!-- BGM播放，小弹窗（歌曲信息、开始、停止、显示进度、重播）-->
+    <div id="monitor-popup" class="monitor-div">
+        <a>在干什么👀</a>
+        <div style="font-weight:600;" id="leonxie-status">似了</div>
+    </div>
+    <!--视奸div-->
   </body>
 </html>

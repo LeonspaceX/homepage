@@ -352,7 +352,8 @@
         .light-mode .big-card,
         .light-mode .small-card,
         .light-mode .social-div,
-        .light-mode .BGM-div {
+        .light-mode .BGM-div,
+        .light-mode .monitor-div {
             background: rgba(255, 255, 255, 0.3) !important; /* 半透明白色背景 */
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px); /* Safari支持 */
@@ -364,6 +365,21 @@
             position:fixed; 
             bottom:20px; 
             right:20px; 
+            background:var(--surface0); 
+            color:var(--text); 
+            padding:15px; 
+            border-radius:12px; 
+            box-shadow:0 4px 12px var(--surface1); 
+            width:260px; 
+            z-index:999;
+            font-family: 'LXGW Wenkai Screen', sans-serif;
+        }
+        .monitor-div
+        {
+            display:none; 
+            position:fixed; 
+            bottom:20px; 
+            left:20px; 
             background:var(--surface0); 
             color:var(--text); 
             padding:15px; 

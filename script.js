@@ -1,4 +1,5 @@
-const texts = [
+document.addEventListener('DOMContentLoaded', function() {
+    const texts = [
             "『保持热爱，奔赴山海。』",
             "『在这个世界难免会迷茫，但别再把小刀带在身上』",
             "『生命是一万次的谎话，吊唁着梦和童话』"
@@ -109,7 +110,9 @@ const texts = [
             setInterval(updateTime, 1000);
 
     const musicBtn = document.getElementById('music-btn');
+    const monitorBtn = document.getElementById('monitor-btn');
     const bgmPopup = document.getElementById('bgm-popup');
+    const monitorPopup = document.getElementById('monitor-popup');
     const bgmAudio = document.getElementById('bgm-audio');
     const bgmToggle = document.getElementById('bgm-toggle');
     const bgmToggleIcon = document.getElementById('bgm-toggle-icon');
@@ -118,10 +121,16 @@ const texts = [
     const bgmBarContainer = document.getElementById('bgm-bar-container');
     const bgmTime = document.getElementById('bgm-time');
 
-    // 显示/隐藏弹窗
+    // 显示/隐藏弹窗(BGM)
     musicBtn.addEventListener('click', () => {
         bgmPopup.style.display = bgmPopup.style.display === 'none' ? 'block' : 'none';
     });
+
+    // 显示/隐藏弹窗(视奸)
+    monitorBtn.addEventListener('click', () => {
+        monitorPopup.style.display = monitorPopup.style.display === 'none' ? 'block' : 'none';
+    });
+
 
     // 播放/暂停切换
     bgmToggle.addEventListener('click', () => {
@@ -169,3 +178,12 @@ const texts = [
         const s = Math.floor(seconds % 60);
         return `${m}:${s.toString().padStart(2,'0')}`;
     }
+
+    let ws = new WebSocket("wss://154.36.158.253:8000/ws");
+    ws.onmessage = function(event) {
+      document.getElementById("leonxie-status").innerText = event.data;
+    };
+    ws.onclose = function() {
+      document.getElementById("leonxie-status").innerText = "似了";
+    };
+});
