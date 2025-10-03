@@ -355,7 +355,8 @@
         .light-mode .small-card,
         .light-mode .social-div,
         .light-mode .BGM-div,
-        .light-mode .monitor-div {
+        .light-mode .monitor-div,
+        .light-mode .btn {
             background: rgba(255, 255, 255, 0.3) !important; /* 半透明白色背景 */
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px); /* Safari支持 */
