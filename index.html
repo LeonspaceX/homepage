@@ -16,69 +16,76 @@
         <div class="btn icon-btn" id="monitor-btn" title="视奸面板">👁️</div>
     </div>
     <!-- 右上角 -->
-    <div class="top-time" id="top-time"></div>
-    <div class="big-card">
-        <div class="avatar-div"></div>
-        <h1>👋 Hi, This is <span style="color: var(--green)">Leonxie/晓夜</span>~</h1>
-        <p id="motto">
-            <span id="motto-text"></span>
-            <span id="motto-cursor">_</span>
-        </p>
-        <!-- 头像&座右铭 -->
-
-
+    <div class="top-line">
+      <div class="top-time" id="top-time"></div>
+      <p id="lyric" class="lyric"></p>
+      <p id="pairlyric" class="lyric"></p>
     </div>
-    <div class="card-row">
-        <div class="small-card" onclick="window.open('https://leonxie.cn', '_blank')">
-            <span class="icon">📖</span>
-            <span class="label">Blog</span>
+    <!-- 主内容容器 -->
+    <div class="main-content">
+        <div class="big-card">
+            <div class="avatar-div"></div>
+            <h1>👋 Hi, This is <span style="color: var(--green)">Leonxie/晓夜</span>~</h1>
+            <p id="motto">
+                <span id="motto-text"></span>
+                <span id="motto-cursor">_</span>
+            </p>
+            <!-- 头像&座右铭 -->
+
+
         </div>
-        <div class="small-card" onclick="window.open('https://music.leonxie.cn', '_blank')">
-            <span class="icon">🎵</span>
-            <span class="label">Music</span>
+        <div class="card-row">
+            <div class="small-card" onclick="window.open('https://leonxie.cn', '_blank')">
+                <span class="icon">📖</span>
+                <span class="label">Blog</span>
+            </div>
+            <div class="small-card" onclick="window.open('https://music.leonxie.cn', '_blank')">
+                <span class="icon">🎵</span>
+                <span class="label">Music</span>
+            </div>
+            <div class="small-card" onclick="window.open('https://miku39.sbs', '_blank')">
+                <span class="icon">💫</span>
+                <span class="label">MIKU39</span>
+            </div>
+            <div class="small-card" onclick="window.open('https://catpost.link', '_blank')">
+                <span class="icon">🐱</span>
+                <span class="label">Catpost</span>
+            </div>
         </div>
-        <div class="small-card" onclick="window.open('https://miku39.sbs', '_blank')">
-            <span class="icon">💫</span>
-            <span class="label">MIKU39</span>
-        </div>
-        <div class="small-card" onclick="window.open('https://catpost.link', '_blank')">
-            <span class="icon">🐱</span>
-            <span class="label">Catpost</span>
+        <div class="social-div">
+                <p class="social-title">要来找咱嘛~</p>
+                <div class="socials">
+                <a class="social-link" href="https://github.com/LeonSpaceX" title="GitHub" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 .5C5.648.5.5 5.648.5 12c0 5.092 3.292 9.398 7.865 10.918.575.105.785-.25.785-.555v-2.055c-3.2.695-3.875-1.54-3.875-1.54-.523-1.332-1.277-1.687-1.277-1.687-1.043-.715.078-.7.078-.7 1.152.082 1.757 1.187 1.757 1.187 1.027 1.762 2.695 1.25 3.352.957.105-.75.402-1.25.73-1.54-2.553-.29-5.235-1.277-5.235-5.687 0-1.258.45-2.285 1.188-3.09-.12-.29-.516-1.457.112-3.035 0 0 .968-.31 3.172 1.176A11.07 11.07 0 0 1 12 6.445c.977.004 1.957.132 2.875.387 2.203-1.484 3.168-1.176 3.168-1.176.63 1.578.234 2.745.117 3.035.74.805 1.188 1.832 1.188 3.09 0 4.422-2.688 5.394-5.25 5.68.414.355.797 1.05.797 2.117v3.14c0 .305.207.664.793.551C20.215 21.395 23.5 17.09 23.5 12c0-6.352-5.148-11.5-11.5-11.5z"/>
+                </svg>
+                </a>
+
+                
+                <a class="social-link" href="https://t.me/@NekoLeonXie" title="Telegram" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9.993 15.67 9.77 19.46c.348 0 .498-.147.679-.324l1.63-1.555 3.385 2.477c.62.34 1.063.161 1.224-.573l2.215-10.4c.226-1.053-.379-1.466-1.043-1.207L4.41 11.04c-1.016.407-.999.993-.173 1.26l3.26 1.017 7.572-4.773c.356-.216.68-.097.414.139"/>
+                </svg>
+                </a>
+
+                
+                <!-- Misskey -->
+                <a class="social-link" href="https://catpost.link/@leonxie" title="Misskey" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" class="iconify iconify--simple-icons icon-iconify"><path fill="currentColor" d="M8.91 16.892c-1.039.003-1.931-.63-2.352-1.366c-.225-.322-.67-.437-.676 0v2.014q0 1.215-.876 2.1q-.85.86-2.078.86q-1.2 0-2.077-.86A2.93 2.93 0 0 1 0 17.54V6.46q0-.936.526-1.695a2.86 2.86 0 0 1 1.402-1.088a2.9 2.9 0 0 1 1-.177q1.353 0 2.253 1.063l2.997 3.515c.067.05.263.437.732.437c.47 0 .692-.386.758-.437l2.972-3.515Q13.567 3.5 14.918 3.5q.501 0 1.001.177a2.73 2.73 0 0 1 1.377 1.088q.55.758.55 1.695v11.08q0 1.215-.875 2.1q-.852.86-2.078.86q-1.201 0-2.078-.86a2.93 2.93 0 0 1-.85-2.1v-2.014c-.05-.55-.531-.204-.702 0c-.45.843-1.313 1.361-2.352 1.366M21.448 8.61q-1.05 0-1.802-.733q-.726-.759-.726-1.822c0-1.063.242-1.307.726-1.796a2.44 2.44 0 0 1 1.802-.758q1.05 0 1.803.758q.75.735.75 1.796q0 1.063-.75 1.822q-.751.732-1.803.733m.025.507q1.05 0 1.777.758q.75.759.751 1.822v6.248q0 1.064-.75 1.821a2.4 2.4 0 0 1-1.778.734q-1.05 0-1.802-.733a2.5 2.5 0 0 1-.75-1.822v-6.248a2.5 2.5 0 0 1 .75-1.822a2.44 2.44 0 0 1 1.802-.758"></path></svg>
+                </a>
+
+                <!-- QQ -->
+                <a class="social-link" href="QQ.png" title="QQ" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024" fill="currentColor">
+                    <path d="M824.8 613.2c-16-51.4-34.4-94.6-62.7-165.3C766.5 262.2 689.3 112 511.5 112 331.7 112 256.2 265.2 261 447.9c-28.4 70.8-46.7 113.7-62.7 165.3-34 109.5-23 154.8-14.6 155.8 18 2.2 70.1-82.4 70.1-82.4 0 49 25.2 112.9 79.8 159-26.4 8.1-85.7 29.9-71.6 53.8 11.4 19.3 196.2 12.3 249.5 6.3 53.3 6 238.1 13 249.5-6.3 14.1-23.8-45.3-45.7-71.6-53.8 54.6-46.2 79.8-110.1 79.8-159 0 0 52.1 84.6 70.1 82.4 8.5-1.1 19.5-46.4-14.5-155.8z">
+                    </path>
+                </svg>
+                </a>
+
+            </div>
         </div>
     </div>
-    <div class="social-div">
-            <p class="social-title">要来找咱嘛~</p>
-            <div class="socials">
-            <a class="social-link" href="https://github.com/LeonSpaceX" title="GitHub" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 .5C5.648.5.5 5.648.5 12c0 5.092 3.292 9.398 7.865 10.918.575.105.785-.25.785-.555v-2.055c-3.2.695-3.875-1.54-3.875-1.54-.523-1.332-1.277-1.687-1.277-1.687-1.043-.715.078-.7.078-.7 1.152.082 1.757 1.187 1.757 1.187 1.027 1.762 2.695 1.25 3.352.957.105-.75.402-1.25.73-1.54-2.553-.29-5.235-1.277-5.235-5.687 0-1.258.45-2.285 1.188-3.09-.12-.29-.516-1.457.112-3.035 0 0 .968-.31 3.172 1.176A11.07 11.07 0 0 1 12 6.445c.977.004 1.957.132 2.875.387 2.203-1.484 3.168-1.176 3.168-1.176.63 1.578.234 2.745.117 3.035.74.805 1.188 1.832 1.188 3.09 0 4.422-2.688 5.394-5.25 5.68.414.355.797 1.05.797 2.117v3.14c0 .305.207.664.793.551C20.215 21.395 23.5 17.09 23.5 12c0-6.352-5.148-11.5-11.5-11.5z"/>
-            </svg>
-            </a>
-
-            
-            <a class="social-link" href="https://t.me/@NekoLeonXie" title="Telegram" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M9.993 15.67 9.77 19.46c.348 0 .498-.147.679-.324l1.63-1.555 3.385 2.477c.62.34 1.063.161 1.224-.573l2.215-10.4c.226-1.053-.379-1.466-1.043-1.207L4.41 11.04c-1.016.407-.999.993-.173 1.26l3.26 1.017 7.572-4.773c.356-.216.68-.097.414.139"/>
-            </svg>
-            </a>
-
-            
-            <!-- Misskey -->
-            <a class="social-link" href="https://catpost.link/@leonxie" title="Misskey" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" class="iconify iconify--simple-icons icon-iconify"><path fill="currentColor" d="M8.91 16.892c-1.039.003-1.931-.63-2.352-1.366c-.225-.322-.67-.437-.676 0v2.014q0 1.215-.876 2.1q-.85.86-2.078.86q-1.2 0-2.077-.86A2.93 2.93 0 0 1 0 17.54V6.46q0-.936.526-1.695a2.86 2.86 0 0 1 1.402-1.088a2.9 2.9 0 0 1 1-.177q1.353 0 2.253 1.063l2.997 3.515c.067.05.263.437.732.437c.47 0 .692-.386.758-.437l2.972-3.515Q13.567 3.5 14.918 3.5q.501 0 1.001.177a2.73 2.73 0 0 1 1.377 1.088q.55.758.55 1.695v11.08q0 1.215-.875 2.1q-.852.86-2.078.86q-1.201 0-2.078-.86a2.93 2.93 0 0 1-.85-2.1v-2.014c-.05-.55-.531-.204-.702 0c-.45.843-1.313 1.361-2.352 1.366M21.448 8.61q-1.05 0-1.802-.733q-.726-.759-.726-1.822c0-1.063.242-1.307.726-1.796a2.44 2.44 0 0 1 1.802-.758q1.05 0 1.803.758q.75.735.75 1.796q0 1.063-.75 1.822q-.751.732-1.803.733m.025.507q1.05 0 1.777.758q.75.759.751 1.822v6.248q0 1.064-.75 1.821a2.4 2.4 0 0 1-1.778.734q-1.05 0-1.802-.733a2.5 2.5 0 0 1-.75-1.822v-6.248a2.5 2.5 0 0 1 .75-1.822a2.44 2.44 0 0 1 1.802-.758"></path></svg>
-            </a>
-
-            <!-- QQ -->
-            <a class="social-link" href="QQ.png" title="QQ" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024" fill="currentColor">
-                <path d="M824.8 613.2c-16-51.4-34.4-94.6-62.7-165.3C766.5 262.2 689.3 112 511.5 112 331.7 112 256.2 265.2 261 447.9c-28.4 70.8-46.7 113.7-62.7 165.3-34 109.5-23 154.8-14.6 155.8 18 2.2 70.1-82.4 70.1-82.4 0 49 25.2 112.9 79.8 159-26.4 8.1-85.7 29.9-71.6 53.8 11.4 19.3 196.2 12.3 249.5 6.3 53.3 6 238.1 13 249.5-6.3 14.1-23.8-45.3-45.7-71.6-53.8 54.6-46.2 79.8-110.1 79.8-159 0 0 52.1 84.6 70.1 82.4 8.5-1.1 19.5-46.4-14.5-155.8z">
-                </path>
-            </svg>
-            </a>
-
-        </div>
-    </div>
- <!-- BGM 控制弹窗 -->
+    <!-- BGM 控制弹窗 -->
     <div id="bgm-popup" class="BGM-div">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
             <div style="font-weight:600;" id="bgm-title">深海少女 ゆうゆ/初音ミク</div>
@@ -102,8 +109,8 @@
                 <div id="bgm-bar" style="position:absolute; height:6px; background:var(--mauve); border-radius:3px; width:0%;"></div>
             </div>
         </div>
-
         <audio id="bgm-audio" src="music.mp3" lyricpath="lyrics.json"></audio>
+        <script src="player.js"></script>
     </div>
     <script src="script.js"></script>
     <!-- BGM播放，小弹窗（歌曲信息、开始、停止、显示进度、重播）-->

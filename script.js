@@ -136,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
+
     // 播放/暂停切换
     bgmToggle.addEventListener('click', () => {
         if (bgmAudio.paused) {

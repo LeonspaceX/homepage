@@ -168,19 +168,30 @@
             }
         }
 
-        /* Tip: 参数含义 */
-        .top-time {
-            color: var(--subtext1);
+        /* 顶部时间+歌词一行容器 */
+        .top-line {
             position: fixed;
-            top: 20px;         /* 距离顶部 */
-            left: 20px;       /* 距离左边 */
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            max-width: calc(100vw - 180px); /* 预留右侧按钮空间 */
+            overflow: hidden;
+            z-index: 1000;
         }
 
         @media (max-width: 768px) {
-            .top-time {
+            .top-line {
                 top: 10px;
                 left: 10px;
+                max-width: calc(100vw - 140px);
             }
+        }
+
+        /* 时间样式（随容器定位） */
+        .top-time {
+            color: var(--subtext1);
         }
         .btn {
             background: var(--surface0);
@@ -391,4 +402,26 @@
             width:260px; 
             z-index:999;
             font-family: 'LXGW Wenkai Screen', sans-serif;
+        }
+
+        .lyric {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 0; /* 顶部一行排版避免默认段落外边距 */
+        }
+
+        .lyric span {
+            display: inline-block;
+            background: linear-gradient(to right, #000000 var(--progress, 0%), #818282 var(--progress, 0%));         /*#000000与#818282分别是播放完与未播放的文字颜色*/
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transition: --progress 0.1s ease;
+            white-space: nowrap; /* 保持英文歌词不换行 */
+        }
+
+        /* 主内容容器：距离顶端30px */
+        .main-content {
+            margin-top: 30px;
         }
