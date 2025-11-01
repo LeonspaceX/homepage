@@ -421,6 +421,14 @@
             white-space: nowrap; /* 保持英文歌词不换行 */
         }
 
+        /* 移动端不显示歌词 */
+        @media (max-width: 768px) {
+            #lyric,
+            #pairlyric {
+                display: none;
+            }
+        }
+
         /* 主内容容器：距离顶端30px */
         .main-content {
             margin-top: 30px;
