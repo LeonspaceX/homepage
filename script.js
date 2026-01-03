@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return `${m}:${s.toString().padStart(2,'0')}`;
     }
 
-    let ws = new WebSocket("wss://154.36.158.253:8000/ws");
+    let ws = new WebSocket("wss://monitor.nekoqwq.space/ws");
     ws.onmessage = function(event) {
       document.getElementById("leonxie-status").innerText = event.data;
     };
